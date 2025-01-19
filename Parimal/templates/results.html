@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Matching Symptoms</h1>
+{% if stage == "cooccur" %}
+<form method="post" action="/refine">
+    {% for symptom in found_symptoms %}
+    <div>
+        <input type="checkbox" id="symptom{{ loop.index }}" name="selected_symptoms" value="{{ symptom }}">
+        <label for="symptom{{ loop.index }}">{{ symptom }}</label>
+    </div>
+    {% endfor %}
+    <button type="submit">Refine Symptoms</button>
+</form>
+{% elif stage == "final" %}
+<h2>Final Refined Symptoms</h2>
+<form method="post" action="/predict">
+    {% for symptom in found_symptoms %}
+    <div>
+        <input type="checkbox" id="symptom{{ loop.index }}" name="selected_symptoms" value="{{ symptom }}">
+        <label for="symptom{{ loop.index }}">{{ symptom }}</label>
+    </div>
+    {% endfor %}
+    <button type="submit">Predict Disease</button>
+</form>
+{% elif stage == "predict" %}
+<h2>Top Predicted Diseases</h2>
+<ul>
+    {% for disease, probability in predictions %}
+    <li>
+        <a href="{{ url_for('details', disease_name=disease) }}">{{ disease }}</a> - Probability: {{ probability }}%
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Ninja</title>
+    <link rel="stylesheet" href="static/style.css">
+    
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class='nav-list'>
+                <div class="logo" href = "#">Medical Ninja</div>
+                <ul class="nav-links">
+                    <li><a href="#" class="home-link">Home</a></li>
+                    <li><a href="#try-out" class="try-out-link">Try Out</a></li>
+                    <li><a href="#analytics" class="analytics-link">Analytics</a></li>
+                    <li><a href="#about-us" class="about-us-link">About Us</a></li>
+                </ul>
+            </div>
+            <div class="profile-section">
+                <img src="{{ url_for('static', filename='icon/profile.png') }}" alt="Profile" class="profile-pic">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="home">
+        <h1>Welcome, <span id="userName"></span></h1>
+        <p>Taking small steps for your health today leads to big results tomorrow.</p>
+        <div class="buttons">
+            <form   action="/index" method="GET" style="display:inline;">
+                <button class="explore-btn" type="submit" name="action" value="try_it_out" class="try-it-out">Explore It Now </button>
+            </form>
+            <button class="access-btn">24/7 Accessibility and Availability</button>
+        </div>
+        <!-- Info Box -->
+        <div class="info-box">
+            <h1>250+</h1>
+            <p>Disease Detected</p>
+            
+        </div>
+    </section>
+
+<!-- Analytics Section -->
+<section id="analytics" style="display: flex; gap: 20px; width: 100%; align-items: flex-start;">
+    <!-- Left: Model Analytics -->
+    <div style="flex: 3;">
+        <h2>Model Analytics</h2>
+        <!-- Analytics Card Section -->
+        <div class="analytics-card" style="display: flex; gap: 20px; margin-bottom: 20px;">
+            <!-- Trained Patient Data -->
+            <div class="analytics-section" style="text-align: center;">
+                <p class="title" style="color: gray;">Trained Patient Data</p>
+                <p class="value" style="color: blue; font-weight: bold; font-size: 1.5rem;">8,000 +</p>
+            </div>
+            <!-- New User Coming Each Month -->
+            <div class="analytics-section" style="text-align: center;">
+                <p class="title" style="color: gray;">New User Coming Each Month</p>
+                <p class="value" style="color: #FF69B4; font-weight: bold; font-size: 1.5rem;">150+</p>
+            </div>
+            <!-- Healthcare Cost Reduction -->
+            <div class="analytics-section" style="text-align: center;">
+                <p class="title" style="color: gray;">Healthcare Cost Reduction</p>
+                <p class="value" style="color: #32CD32; font-weight: bold; font-size: 1.5rem;">30%</p>
+            </div>
+        </div>
+
+        <!-- Performance Overview Graphs -->
+        <div style="display: flex;gap: 10px; margin-top: 20px; align-items: flex-start;">
+            <!-- Graph -->
+            <div style="flex: 2; position: relative; left: -80px;">
+                <h1 class = "analytics-section" style = "padding-left: 80px;">Model Performance</h1>
+                <img src="static/icon/plot.png" alt="Graph" class="graph" style="width: 100%; border-radius: 8px;">
+            </div>
+            <!-- Reviews Section -->
+            <div
+                style="flex: 1; margin-left: 20px; padding-left: 20px; text-align: center; border-left: 1px solid #ddd;">
+                <h3 style="margin-bottom: 10px;">Reviews</h3>
+                <p style="margin-bottom: 10px; color: gray;">⭐ 4.5/5</p>
+                <p style="margin-bottom: 10px; color: gray;">"The application is easy to use and provides accurate
+                    predictions!"</p>
+                <p style="margin-bottom: 10px; color: gray;">"Impressive analytics for tracking patient data
+                    effectively."</p>
+                <p style="margin-bottom: 10px; color: gray;">"24/7 availability makes it very reliable for quick
+                    checks."</p>
+                <p style="margin-top: 10px; color: blue; cursor: pointer;">View More Reviews</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Out Section</title>
+    <link rel="stylesheet" href="try_out_styles.css">
+</head>
+
+<body>
+<!-- Try Out Section -->
+<section id="try-out">
+    <div class="container">
+        <!-- Left Content -->
+        <div class="left-content">
+            <h2>Try It Now</h2>
+            <p>
+                Experience accurate predictions and powerful insights with <strong>Medical Ninja</strong>.
+                Upload your data, get predictions, and take control of healthcare decisions.
+            </p>
+
+            <form action="/index" method="GET">
+                <button type="submit" name="action" value="try_it_out">
+                    Try It Out
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Content: Image -->
+        <div class="right-content">
+            <img src="static/icon/try_out_img.jpg" alt="Try Out Illustration" loading="eager">
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
+<body>
+<section id = "about-us" class="featured-section">
+    <h3 class="featured-text">As featured in</h3>
+    <div class ="container1">
+    <div class="logos">
+        <div class="logo">
+            <img src="static/icon/pic4.avif">
+            <h5>Instant Remote Consultations with AI Support</h5>
+        </div>
+        <div class="logo">
+            <img src="static/icon/pic3.avif">
+            <h5>AI-Powered Real-Time Diagnostic Insights</h5>
+        </div>
+        <div class="logo">
+            <img src="static/icon/pic2.avif">
+            <h5>Effortless Real-Time Patient Record Access</h5>
+        </div>
+    </div>
+    </div>
+</section>
+</div>
+</body>
+</html>
+
+
+    <!-- Dialog Box -->
+    <!-- <div class="dialog-overlay"  id="dialogOverlay"> -->
+        <!-- <div class="dialog-box">
+            <h3>Enter Your Details</h3>
+            <input type="text" id="nameInput" placeholder="Enter your First name" required>
+            <input type="text" id="lastName" placeholder="Enter your Last name" required>
+            <input type="number" id="ageInput" placeholder="Enter your age" required>
+            <select id="genderInput">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <button onclick="submitDetails()">Submit</button>
+        </div> -->
+    <!-- </div> -->
+
+    <script>
+        // Automatically show dialog box on page load
+        window.onload = function () {
+            document.getElementById('dialogOverlay').style.display = 'flex';
+        };
+
+        // Submit details and update welcome message
+        function submitDetails() {
+            const name = document.getElementById('nameInput').value;
+            const age = document.getElementById('ageInput').value;
+            const gender = document.getElementById('genderInput').value;
+
+            if (name && age && gender) {
+                document.getElementById('userName').textContent = name;
+                document.getElementById('dialogOverlay').style.display = 'none';
+            } else {
+                alert('Please fill in all fields!');
+            }
+        }
+    </script>
+</body>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Contact Section -->
+        <div class="column">
+            <h2>About Us</h2>
+            <p>We are a passionate team dedicated to building solutions that make life simpler and smarter. Our project
+                combines innovation, technology, and real-world applications to create impact.</p>
+            <p>Reach us at:</p>
+            <p><strong>Email:</strong> contact@projectname.com</p>
+            <p><strong>Phone:</strong> 123-456-7890</p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div class="column links">
+            <h2>Quick Links</h2>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Learn More</a>
+        </div>
+    
+        <!-- Newsletter Signup -->
+        <div class="column newsletter">
+            <h2>Subscribe</h2>
+            <p>Sign up to get updates on our latest innovations and project progress.</p>
+            <input type="email" placeholder="Enter your email" required>
+            <button>Subscribe</button>
+        </div>
+    
+        <!-- Social Media Links -->
+        <div class="column social-links">
+            <h2>Follow Us</h2>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+            <a href="#">Facebook</a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        &copy; 2024 [Your Project Name]. All Rights Reserved.
+    </div>
+    </footer>
+
+
+
+</html>

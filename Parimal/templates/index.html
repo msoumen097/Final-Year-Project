@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Disease Prediction System</h1>
+<form method="post" action="/index">
+    <label for="symptoms">Enter symptoms (comma-separated):</label>
+    <input type="text" id="symptoms" name="symptoms" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+

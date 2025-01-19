@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Details</title>
+</head>
+
+<body>
+    <h1>Disease Details Fetcher</h1>
+    <form method="post">
+        <label for="disease_name">Enter Disease Name:</label>
+        <input type="text" id="disease_name" name="disease_name" placeholder="e.g., Myocardial Infarction" required>
+        <button type="submit">Fetch Details</button>
+    </form>
+
+    {% if disease_name %}
+    <h2>Results for: {{ disease_name }}</h2>
+    {% if details.error %}
+    <p style="color: red;">Error: {{ details.error }}</p>
+    {% else %}
+    <pre>{{ details | tojson(indent=2) }}</pre>
+    {% endif %}
+    {% endif %}
+</body>
+
+</html>
+
+
+</html>
